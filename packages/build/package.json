@@ -1,0 +1,28 @@
+{
+  "name": "@embedpdf/build",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./vite": {
+      "types": "./dist/vite/index.d.ts",
+      "import": "./dist/vite/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^6.0.0",
+    "unplugin-dts": "1.0.0-beta.6",
+    "vite": "^6.3.5"
+  },
+  "peerDependencies": {
+    "@vitejs/plugin-vue": ">=6.0.0",
+    "unplugin-dts": ">=1.0.0-beta.6",
+    "vite": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@vue/language-core": "^3.0.6"
+  }
+}

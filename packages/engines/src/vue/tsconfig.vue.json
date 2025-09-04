@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "types": ["vue"],
+    "baseUrl": "../..",
+    "paths": {
+      "@embedpdf/engines/pdfium-worker-engine": ["src/lib/pdfium/web/worker-engine.ts"],
+      "@embedpdf/engines/pdfium-direct-engine": ["src/lib/pdfium/web/direct-engine.ts"]
+    }
+  },
+  "include": ["./**/*.ts", "./**/*.vue"]
+}

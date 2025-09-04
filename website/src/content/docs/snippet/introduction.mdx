@@ -1,0 +1,101 @@
+---
+title: EmbedPDF Snippet
+description: The easiest way to embed PDF files in your website with a complete, ready-to-use interface
+searchable: true
+---
+
+# EmbedPDF Snippet
+
+## Introduction
+
+**The EmbedPDF snippet** is the simplest and most complete way to add PDF viewing capabilities to your website. It's a "batteries included" solution that gives you a fully functional PDF viewer with just a few lines of code.
+
+### What makes the EmbedPDF snippet special?
+
+Unlike other PDF solutions that require complex setup or building your own interface, the EmbedPDF snippet comes with everything you need:
+
+- **Complete UI included**: Professional toolbar, navigation, zoom controls, search, and more
+- **Zero build required**: Works with any website, no bundlers or build tools needed
+- **Copy and paste setup**: Add it to your site in under 30 seconds
+- **Fully customizable**: Adjust settings to match your needs perfectly
+- **Works everywhere**: Compatible with any JavaScript framework or plain HTML
+
+## Installation
+
+No installation required! The EmbedPDF snippet loads directly from our CDN. Just add the script to your HTML:
+
+```html filename="index.html" copy
+<div id="pdf-viewer" style="height: 500px"></div>
+<script async type="module">
+  import EmbedPDF from 'https://snippet.embedpdf.com/embedpdf.js';
+
+  const viewer = EmbedPDF.init({
+    type: 'container',
+    target: document.getElementById('pdf-viewer'),
+    src: 'https://snippet.embedpdf.com/ebook.pdf'
+  });
+</script>
+```
+
+That's it! Your PDF viewer is ready to use with a professional interface.
+
+## Basic Usage
+
+The EmbedPDF snippet follows a simple three-step pattern:
+
+1. **Create a container**: Add a `<div>` where you want the PDF viewer to appear
+2. **Import the library**: Load EmbedPDF from our fast, reliable CDN
+3. **Initialize**: Call `EmbedPDF.init()` with your configuration
+
+### Minimal Example
+
+```html filename="basic-example.html" copy
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My PDF Viewer</title>
+</head>
+<body>
+  <div id="pdf-viewer" style="height: 100vh"></div>
+  
+  <script async type="module">
+    import EmbedPDF from 'https://snippet.embedpdf.com/embedpdf.js';
+
+    EmbedPDF.init({
+      type: 'container',
+      target: document.getElementById('pdf-viewer'),
+      src: 'https://snippet.embedpdf.com/ebook.pdf'
+    });
+  </script>
+</body>
+</html>
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**PDF not loading?**
+- Verify the PDF URL is publicly accessible
+- Check CORS headers if loading from a different domain
+- Ensure the file is a valid, non-corrupted PDF
+- Test the URL directly in your browser
+
+**Viewer appears blank or empty?**
+- Check browser console for JavaScript errors
+- Verify the target element exists when the script runs
+- Ensure the container has a defined height (not 0px)
+- Confirm you're using a modern browser with ES6 module support
+
+**Performance issues or slow loading?**
+- Keep web workers enabled (`worker: true` - this is the default)
+- Optimize your PDF files by compressing them
+- Use a CDN to serve your PDF files faster
+- Consider reducing tile size for lower-end devices
+
+### Browser Compatibility
+
+The EmbedPDF snippet works in all modern browsers that support:
+- ES6 modules (for the import statement)
+- WebAssembly (for the PDF rendering engine)  
+- Web Workers (optional, but strongly recommended for performance)

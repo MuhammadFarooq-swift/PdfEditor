@@ -1,0 +1,44 @@
+{
+  "name": "embedpdf",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.4.0",
+   "scripts": {
+    "dev": "turbo run dev --parallel",
+    "clean": "turbo run clean && rimraf .turbo/cache",
+    "build": "turbo run build --filter=./packages/* --filter=./snippet",
+    "postinstall": "pnpm build:packages"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.4",
+    "@changesets/get-github-info": "^0.6.0",
+    "@roarr/cli": "^5.12.4",
+    "@types/node": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "dotenv": "^16.3.1",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "glob": "^11.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "rimraf": "latest",
+    "concurrently": "^9.2.0",
+    "vite": "^6.3.5",
+    "turbo": "latest",
+    "turbowatch": "^2.29.4",
+    "typescript": "latest"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx,json,css,md,vue}": "prettier --write"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/node": "^22.0.0"
+    }
+  }
+}

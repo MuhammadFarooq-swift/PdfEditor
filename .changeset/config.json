@@ -1,0 +1,20 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.1.1/schema.json",
+  "changelog": ["./changelog-config", { "repo": "embedpdf/embed-pdf-viewer" }],
+  "commit": false,
+  "fixed": [
+    [
+      "@embedpdf/core",
+      "@embedpdf/engines",
+      "@embedpdf/models",
+      "@embedpdf/plugin-*",
+      "@embedpdf/pdfium",
+      "@embedpdf/utils"
+    ]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": ["@embedpdf/website", "@embedpdf/snippet", "@embedpdf/example-*"]
+}

@@ -1,0 +1,96 @@
+'use client'
+
+import React from 'react'
+import { ArrowRight, MergeIcon } from 'lucide-react'
+import { Scribble3 } from './icons/scribble3'
+import Link from 'next/link'
+
+const tools = [
+  {
+    title: 'PDF Merge Tool',
+    description:
+      'Combine multiple PDFs into a single document with custom page ordering',
+    icon: <MergeIcon className="h-6 w-6 text-white" />,
+    href: '/tools/pdf-merge',
+    color: 'from-purple-600 to-blue-700',
+  },
+  // Add more tools here as they are created
+]
+
+// Animated background component from documentation-overview
+const AnimatedBackground = () => {
+  return (
+    <div className="absolute inset-0 -z-10">
+      <div className="animate-blob absolute left-10 top-20 h-64 w-64 rounded-full bg-purple-500 opacity-10 mix-blend-multiply blur-3xl filter"></div>
+      <div className="animate-blob animation-delay-2000 absolute right-10 top-40 h-72 w-72 rounded-full bg-blue-500 opacity-10 mix-blend-multiply blur-3xl filter"></div>
+      <div className="animate-blob animation-delay-4000 absolute bottom-32 left-20 h-80 w-80 rounded-full bg-teal-500 opacity-10 mix-blend-multiply blur-3xl filter"></div>
+      <div className="bg-grid-pattern opacity-3 absolute inset-0"></div>
+    </div>
+  )
+}
+
+export default function ToolsOverview() {
+  return (
+    <div className="relative min-h-screen">
+      <AnimatedBackground />
+
+      <div className="pb-16 pt-20 sm:pt-24 lg:pt-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header Section */}
+          <div className="mb-24 text-center">
+            <div className="mb-6 inline-block rounded-full border border-blue-200 bg-blue-50 px-6 py-2 text-sm font-medium text-blue-800">
+              PDF Tools
+            </div>
+            <h1 className="mb-6 text-4xl font-black leading-tight tracking-tight text-gray-900 md:text-5xl">
+              <span className="relative inline-block">
+                <span className="relative z-10">Free browser-based tools</span>
+                <div className="absolute bottom-1 left-0 right-0 -z-10 h-4 -rotate-1 transform opacity-50">
+                  <Scribble3 color="#bedbff" />
+                </div>
+              </span>
+              <span className="block bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">
+                for your PDF documents
+              </span>
+            </h1>
+            <p className="mx-auto max-w-2xl text-xl text-gray-600">
+              Simple and powerful tools to help you work with PDF files directly
+              in your browser
+            </p>
+          </div>
+
+          {/* Tools Grid */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {tools.map((tool, index) => (
+              <div key={index} className="group relative">
+                <div
+                  className={`absolute -inset-0.5 bg-gradient-to-r ${tool.color} rounded-2xl opacity-10 blur transition duration-300 group-hover:opacity-30`}
+                ></div>
+                <Link href={tool.href} className="relative block">
+                  <div className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white p-6 shadow-md">
+                    <div
+                      className={`h-12 w-12 rounded-lg bg-gradient-to-br ${tool.color} mb-4 flex items-center justify-center text-2xl`}
+                    >
+                      {tool.icon}
+                    </div>
+                    <h3 className="mb-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600">
+                      {tool.title}
+                    </h3>
+                    <p className="mb-6 text-gray-600">{tool.description}</p>
+                    <div className="mt-auto">
+                      <div
+                        className={`inline-flex items-center rounded-full bg-gradient-to-r px-4 py-2 ${tool.color} text-sm font-medium text-white transition-shadow hover:shadow-md`}
+                      >
+                        Try Tool
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
