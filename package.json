@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "packageManager": "pnpm@10.4.0",
-   "scripts": {
+ "scripts": {
     "dev": "turbo run dev --parallel",
     "clean": "turbo run clean && rimraf .turbo/cache",
     "build": "turbo run build --filter=./packages/* --filter=./snippet",
+    "build:packages": "turbo run build --filter=./packages/*",
     "postinstall": "pnpm build:packages"
-  },
+ },
   "devDependencies": {
     "@changesets/cli": "^2.29.4",
     "@changesets/get-github-info": "^0.6.0",
