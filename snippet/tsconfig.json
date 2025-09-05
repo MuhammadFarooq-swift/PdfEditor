@@ -17,9 +17,6 @@
     "declarationMap": true,
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-
-    // 👇 Add these lines
-    "types": ["node", "classnames"],
-    "typeRoots": ["./node_modules/@types", "../node_modules/@types"]
+    "types": ["node"]   // 👈 keep only node
   }
 }
