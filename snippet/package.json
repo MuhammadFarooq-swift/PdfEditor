@@ -12,7 +12,8 @@
   ],
 "scripts": {
   "dev": "rollup -c -w",
-  "build": "rollup -c"
+  "build": "rollup -c",
+  "vercel-build": "pnpm build"
 },
   "dependencies": {
     "@embedpdf/core": "workspace:*",

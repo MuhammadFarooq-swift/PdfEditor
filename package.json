@@ -8,7 +8,8 @@
     "clean": "turbo run clean && rimraf .turbo/cache",
     "build": "turbo run build --filter=./packages/* --filter=./snippet",
     "build:packages": "turbo run build --filter=./packages/*",
-    "postinstall": "pnpm build:packages"
+    "postinstall": "echo 'Skipping build in postinstall for Vercel'"
+
  },
   "devDependencies": {
     "@changesets/cli": "^2.29.4",
